@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#193739">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Álvaro Carrasco Del Olmo · Formación, trayectoria en banca privada y competencias.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; form-action 'none'; img-src 'self' data: file:; font-src 'self' data: file:; media-src 'self' data: blob: file:; connect-src 'self' https://generativelanguage.googleapis.com; style-src 'unsafe-inline'; script-src 'sha256-dWDedCEdCvXQSN2J14DmVRc8ixz+LINXlRy2LgfGg+c='">
+<link rel="icon" href="data:,">
+<title>Álvaro Carrasco del Olmo · Banca privada y ciencia de datos</title>
+<style>@font-face{font-family:'DM Sans';src:url('recursos/dm-sans.woff2') format('woff2');font-weight:100 1000;font-display:swap}
+@font-face{font-family:'Instrument Serif';src:url('recursos/instrument-serif.woff2') format('woff2');font-display:swap}
+@font-face{font-family:'Instrument Serif';src:url('recursos/instrument-serif-italic.woff2') format('woff2');font-style:italic;font-display:swap}
+:root{color-scheme:light;--paper:#faf8f3;--white:#fffdf8;--ink:#193335;--muted:#485e5b;--rule:#cbd0c7;--accent:#9b422d;--tint:#e2ebdf;--gold:#edc78c;--serif:'Instrument Serif',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;font-family:var(--sans);line-height:1.5;color:var(--ink);background:var(--paper);scroll-behavior:smooth}
+*{box-sizing:border-box}body{margin:0}button,input,textarea{font:inherit}button,a{touch-action:manipulation}a{color:inherit;text-underline-offset:.19em}a:hover{text-decoration-thickness:2px}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.58}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,textarea:focus-visible,video:focus-visible{outline:3px solid #aa5234;outline-offset:4px}h1,h2,h3,p,figure,blockquote{margin:0}h1,h2,h3{font-weight:400}h1,h2,.display{font-family:var(--serif)}button,input,textarea{color:var(--ink)}.wrap{width:min(100% - clamp(38px,10vw,154px),1200px);margin-inline:auto}.skip{position:fixed;left:12px;top:-70px;background:white;padding:12px 18px;z-index:8}.skip:focus{top:12px}.nav{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:22px;align-items:center;padding:21px 0;border-bottom:1px solid var(--rule)}.brand{display:flex;gap:11px;align-items:center;font-weight:650;text-decoration:none;font-size:.94rem}.monogram{border:1px solid var(--ink);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;font:italic 1.5rem var(--serif);padding-right:2px}.nav-links{display:flex;justify-self:end;align-items:center;gap:clamp(15px,3vw,43px)}.brand-label,.nav-links a{white-space:nowrap}.nav-links a{text-decoration:none;font-size:.93rem}.nav-links a:hover,.meta-links a:hover{text-decoration:underline}.nav-links .contact-nav{padding:8px 17px;border:1px solid var(--ink);border-radius:999px}.hero{display:grid;grid-template-columns:1.24fr .76fr;align-items:center;gap:clamp(22px,5vw,95px);padding:clamp(44px,5.2vw,76px) 0 clamp(48px,5.4vw,82px)}.eyebrow{font-size:.78rem;font-weight:720;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);display:flex;gap:12px;align-items:center}.eyebrow::before{content:'';width:30px;height:2px;background:currentColor}.hero h1{font-size:clamp(5.15rem,8.3vw,8rem);line-height:.91;letter-spacing:-.035em;margin:29px 0 23px}.hero h1 em{font-weight:400}.hero-lead{color:var(--muted);font-size:clamp(1rem,1.15vw,1.18rem);max-width:51ch;line-height:1.55}.actions{display:flex;align-items:center;gap:14px 22px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-flex;align-items:center;gap:10px;justify-content:center;min-height:46px;padding:10px 20px;border-radius:999px;border:1px solid var(--ink);text-decoration:none;font-weight:650;font-size:.94rem}.btn.primary{background:var(--ink);color:var(--white)}.btn.primary:hover{background:#2d4e4d}.btn.light{background:var(--paper);color:var(--ink)}.text-link{font-size:.94rem;font-weight:620}.hero-art{justify-self:center;position:relative;width:min(100%,360px);margin:0 3% 0 0}.portrait-frame{position:relative;padding:12px;background:#e9e2d1;border:1px solid #c4bdac;box-shadow:11px 11px 0 0 #d4ddcf;transform:rotate(1.5deg)}.portrait-frame img{display:block;width:100%;height:auto;aspect-ratio:.91;object-fit:cover;object-position:50% 28%;background:#efebe5}.hero-art figcaption{margin:22px 0 0;display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.84rem}.hero-art figcaption span:first-child{font-weight:650;color:var(--ink)}.film-section{background:#e8eee4;border-block:1px solid #c4cfbf;padding:clamp(42px,5vw,72px) 0}.section-head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin:0 0 26px}.section-head h2,.section-title{font-size:clamp(2.8rem,5vw,4.55rem);line-height:1;letter-spacing:-.025em}.section-head p{color:var(--muted);max-width:40ch;font-size:.98rem}.films{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(13px,2vw,27px);align-items:start}.film{min-width:0}.film .player{width:100%;aspect-ratio:16/9;background:#193335;overflow:hidden;border-radius:6px;border:1px solid rgba(24,51,53,.16)}video{display:block;width:100%;height:100%;object-fit:contain;background:var(--ink)}.film-type{color:var(--muted);display:flex;justify-content:space-between;align-items:center;margin-top:15px;font-size:.81rem;font-weight:650;letter-spacing:.035em}.film h3{font:clamp(1.75rem,2.35vw,2.5rem)/1.16 var(--serif);margin:4px 0 9px}.film details{border-top:1px solid #bdcbb9;font-size:.90rem}.film summary{padding:10px 0;cursor:pointer;display:list-item}.film details p{color:var(--muted);line-height:1.6;padding:3px 2px 10px}.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(35px,7vw,106px);padding:clamp(48px,6vw,91px) 0}.profile-head{margin-bottom:28px}.profile-head .eyebrow{margin-bottom:13px}.cv-row{border-top:1px solid var(--rule);padding:16px 0 18px;display:grid;gap:5px}.cv-row .when{font-weight:650;color:var(--accent);font-size:.82rem}.cv-row h3{font-family:var(--serif);font-size:1.83rem;line-height:1.14}.cv-row p{max-width:54ch;color:var(--muted);font-size:.96rem}.project-feature{border:1px solid #c9cfbf;background:#f1f2e9;border-radius:8px;padding:clamp(17px,2.3vw,30px);margin-bottom:18px}.project-feature h3{font:2rem/1.06 var(--serif);margin-bottom:11px}.project-feature>p,.more-project p{color:var(--muted);font-size:.96rem}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:20px 0 15px;padding:15px 0;border-block:1px solid #c7cec1}.metrics strong{display:block;font:2.5rem/1 var(--serif)}.metrics span{font-size:.85rem;color:var(--muted)}.more-project{margin:17px 0}.more-project summary{font-weight:650;cursor:pointer}.more-project p{margin-top:7px}.languages{padding-top:15px;border-top:1px solid var(--rule);color:var(--muted);font-size:.94rem}.languages strong{color:var(--ink)}.assistant-zone{background:#193739;color:#ffffff;padding:clamp(46px,5vw,76px) 0}.assistant-layout{display:grid;grid-template-columns:.68fr 1.32fr;gap:clamp(24px,5vw,80px);align-items:start}.assistant-intro .eyebrow{color:#efc68a;margin-bottom:18px}.assistant-intro .section-title{color:#fffaf0}.assistant-intro>p{margin-top:18px;color:#d5e1d9;font-size:1rem;max-width:36ch}.choices{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}.choice{border:1px solid #98b3a8;border-radius:999px;color:#fffdf7;background:transparent;padding:8px 13px;font-size:.88rem;min-height:40px;text-align:left}.choice:hover{background:#325553}.chat-box{border-radius:10px;overflow:hidden;background:#fbfaf5;color:var(--ink);box-shadow:0 13px 46px #0d202119}.chat-head{display:flex;align-items:center;justify-content:space-between;gap:13px;padding:15px 19px;border-bottom:1px solid var(--rule)}.chat-head strong{font-size:.97rem}.mode{display:block;color:var(--muted);font-size:.82rem}.key-toggle{background:transparent;border:1px solid #8fa097;border-radius:99px;font-size:.84rem;padding:8px 13px;font-weight:620}.key-panel{background:#e9efe5;border-bottom:1px solid var(--rule);padding:14px 19px}.key-panel p{font-size:.86rem;color:var(--muted);margin:4px 0 10px}.key-panel label{font-size:.91rem;font-weight:650}.key-field{display:flex;gap:8px;align-items:stretch}.key-field input{background:white;border:1px solid #7c9187;min-width:0;flex:1;border-radius:5px;padding:8px 10px}.mini,.send{border:0;color:white;border-radius:5px;background:var(--ink);padding:8px 15px;font-weight:650}.forget{font-size:.87rem;margin-top:8px;color:var(--ink);text-decoration:underline;background:transparent;border:0;padding:4px 0}.history{padding:18px 19px;min-height:167px;max-height:345px;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}.history:focus-visible{outline-offset:-4px}.empty{color:var(--muted);padding:10px 2px;font-size:.94rem;max-width:50ch}.bubble{margin:0 0 12px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.93rem;line-height:1.52;padding:10px 13px;border-radius:7px;max-width:92%;background:#e7eee5}.bubble strong{display:block;font-size:.76rem;letter-spacing:.025em;color:#465c52;margin:0 0 3px}.bubble.user{margin-left:auto;background:#ecede7}.bubble.error{background:#fae9df;color:#723722}.status{color:var(--muted);font-size:.83rem;margin:0 19px;min-height:1.2em}.composer{border-top:1px solid var(--rule);padding:12px 18px;display:flex;gap:9px;background:#fffefa}.composer input{width:100%;min-width:0;border:1px solid #97a399;border-radius:5px;padding:10px 12px;font-size:.94rem}.composer input:disabled{opacity:1;color:#4e5e56;background:#f3f3ed}.send{padding-inline:15px}.send svg{width:17px;height:17px;vertical-align:middle;stroke:currentColor;fill:none;stroke-width:1.6}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding:25px 0;color:var(--muted);font-size:.9rem}.meta-links{display:flex;gap:18px;flex-wrap:wrap}.meta-links a{color:var(--ink)}[hidden]{display:none!important}.video-error{font-size:.9rem;color:#853d26;padding-top:8px}.noscript{padding:10px 18px;color:var(--ink);background:#fff1d0}.working{animation:pulse 1.25s ease-in-out infinite}.data-link{font-size:.85rem;color:var(--muted)}@keyframes pulse{50%{opacity:.65}}
+@media(max-width:800px){.wrap{width:calc(100% - 48px)}.hero{grid-template-columns:1.23fr .77fr;gap:22px}.hero h1{font-size:clamp(4.15rem,9vw,6rem)}.hero-art{width:min(100%,273px)}.hero-art figcaption{font-size:.73rem}.section-head{align-items:start;flex-direction:column;gap:9px}.section-head p{max-width:none}.profile-grid{gap:31px}.assistant-layout{grid-template-columns:.75fr 1.25fr;gap:22px}.nav-links{gap:18px}.film h3{font-size:1.68rem}}
+@media(max-width:650px){.wrap{width:calc(100% - 36px)}.nav{padding:13px 0;gap:10px}.brand{font-size:.88rem}.nav-links{gap:15px}.nav-links a{font-size:.86rem}.nav-links .contact-nav{display:none}.monogram{width:33px;height:33px;font-size:1.28rem}.hero{display:flex;flex-direction:column;align-items:start;padding:32px 0 34px;gap:30px}.hero h1{font-size:clamp(4.35rem,13vw,6rem);margin:19px 0 17px}.hero-lead{max-width:51ch}.actions{margin-top:20px}.hero-art{margin:0;align-self:center;width:min(74%,292px)}.portrait-frame{padding:8px;box-shadow:7px 7px 0 #d4ddcf}.portrait-frame img{aspect-ratio:1.12;object-position:50% 28%}.hero-art figcaption{margin-top:15px;font-size:.8rem}.films,.profile-grid,.assistant-layout{grid-template-columns:1fr}.films{gap:27px}.film h3{font-size:2rem}.section-head{margin-bottom:20px}.profile-grid{padding:39px 0;gap:28px}.profile-head{margin-bottom:18px}.assistant-intro>p{max-width:none}.choices{margin-top:17px}.assistant-layout{gap:19px}.chat-head,.key-panel,.history{padding-inline:13px}.composer{padding:10px}.status{margin-inline:13px}.foot{align-items:start;flex-direction:column;gap:9px}.nav-links a[href="#trayectoria"]{display:none}}
+@media(max-width:360px){.brand-label{display:none}.hero h1{font-size:4.28rem}.btn{padding:9px 15px}.key-field{flex-wrap:wrap}.key-field input{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}.working{animation:none}} .seek-scene{display:block;cursor:pointer;border:0;background:transparent;color:#245353;padding:0 0 .2em;text-align:left;font:inherit;font-weight:700;text-decoration:underline}.seek-scene:focus-visible{outline:2px solid currentColor}</style>
+</head>
+<body data-portable="false">
+<a class="skip" href="#principal">Saltar al contenido</a>
+<header class="wrap"><nav class="nav" aria-label="Navegación principal">
+<a class="brand" href="#principal" aria-label="Inicio del CV de Álvaro Carrasco"><span class="monogram" aria-hidden="true">Ac</span><span class="brand-label">Álvaro Carrasco</span></a>
+<div class="nav-links"><a href="#videos">Vídeos</a><a href="#trayectoria">Trayectoria</a><a href="#asistente">Asistente</a><a class="contact-nav" href="mailto:acarrascodelolmo@gmail.com" target="_blank" rel="noopener noreferrer">Contacto</a></div>
+</nav></header>
+<main id="principal">
+<section aria-labelledby="nombre" class="wrap hero">
+<div><p class="eyebrow">Banca privada y ciencia de datos</p>
+<h1 id="nombre">Álvaro Carrasco<br>Del Olmo</h1><p class="hero-lead">Soy graduado en ADE por ESIC y curso el último año de Data Science. Durante mis prácticas en Renta 4 Banco combiné el análisis de carteras con la atención a clientes de banca privada.</p>
+<div class="actions"><a class="btn primary" href="#videos">Ver mis vídeos</a><a class="text-link" href="#asistente">Preguntar sobre mi CV</a></div></div>
+<figure class="hero-art"><div class="portrait-frame"><img src="recursos/retrato.jpg" width="334" height="370" alt="Retrato de Álvaro Carrasco Del Olmo" fetchpriority="high" style="object-position:center 36%"></div><figcaption><span>Madrid, España</span><span>Banca privada</span></figcaption></figure>
+</section>
+<section class="film-section" id="videos" aria-labelledby="videos-titulo"><div class="wrap">
+<div class="section-head"><h2 id="videos-titulo">Mi perfil en 90 segundos</h2><p>Mi presentación, un ejemplo de captación en banca privada y las competencias que pongo en práctica al trabajar con otros.</p></div>
+<div class="films"><article class="film"><div class="player"><video controls playsinline preload="metadata" poster="recursos/pitch.webp" data-video="pitch" aria-label="Mi camino hacia la banca"><source src="videos/pitch.mp4" type="video/mp4"><track kind="captions" srclang="es" label="Español" src="videos/pitch.vtt"></track></source></video></div><p class="video-error" hidden>El vídeo no se ha podido cargar. <a href="videos/pitch.mp4" download>Descargar MP4</a>.</p><div class="film-type"><span>Presentación personal</span><span>0:30</span></div><h3>Mi camino hacia la banca</h3><details><summary>Guion por escenas</summary><p><button type="button" class="seek-scene" data-second="0.0" aria-label="Reproducir desde 0 segundos. Álvaro Carrasco Del Olmo">0:00 · Álvaro Carrasco Del Olmo</button> Hola, soy Álvaro Carrasco Del Olmo. Soy graduado en Administración y Dirección de Empresas por ESIC.</p><p><button type="button" class="seek-scene" data-second="7.5" aria-label="Reproducir desde 7.5 segundos. Finanzas y datos">0:07 · Finanzas y datos</button> Estoy terminando el grado en Ciencia de Datos. Me interesa cómo el análisis financiero ayuda a preparar una conversación con un cliente.</p><p><button type="button" class="seek-scene" data-second="15.0" aria-label="Reproducir desde 15 segundos. Mi paso por Renta 4">0:15 · Mi paso por Renta 4</button> Durante mis prácticas en Renta Cuatro colaboré en el seguimiento de carteras y preparé informes para reuniones con clientes.</p><p><button type="button" class="seek-scene" data-second="22.5" aria-label="Reproducir desde 22.5 segundos. Una carrera en banca">0:22 · Una carrera en banca</button> Quiero seguir creciendo en banca privada. Disfruto tanto estudiando una cartera como escuchando a la persona que hay detrás.</p></details></article>
+<article class="film"><div class="player"><video controls playsinline preload="metadata" poster="recursos/proyecto.webp" data-video="proyecto" aria-label="De la primera conversación al alta"><source src="videos/proyecto.mp4" type="video/mp4"><track kind="captions" srclang="es" label="Español" src="videos/proyecto.vtt"></track></source></video></div><p class="video-error" hidden>El vídeo no se ha podido cargar. <a href="videos/proyecto.mp4" download>Descargar MP4</a>.</p><div class="film-type"><span>Banca privada · Caso ilustrativo</span><span>0:30</span></div><h3>De la primera conversación al alta</h3><details><summary>Guion por escenas</summary><p><button type="button" class="seek-scene" data-second="0.0" aria-label="Reproducir desde 0 segundos. La primera conversación">0:00 · La primera conversación</button> Pongamos un ejemplo. Una persona tiene su patrimonio repartido entre varias entidades y quiere entender qué tiene en conjunto.</p><p><button type="button" class="seek-scene" data-second="7.5" aria-label="Reproducir desde 7.5 segundos. Escuchar y ordenar">0:07 · Escuchar y ordenar</button> En la primera reunión le preguntaría para qué quiere el dinero, cuándo podría necesitarlo y qué caídas le preocuparían.</p><p><button type="button" class="seek-scene" data-second="15.0" aria-label="Reproducir desde 15 segundos. Preparar la propuesta">0:15 · Preparar la propuesta</button> Con su permiso, revisaría sus posiciones y prepararía una propuesta. Le explicaría las coincidencias entre fondos, los riesgos y los costes.</p><p><button type="button" class="seek-scene" data-second="22.5" aria-label="Reproducir desde 22.5 segundos. Acompañar la decisión">0:22 · Acompañar la decisión</button> Si decide hacerse cliente, le acompañaría en el alta y fijaríamos la primera revisión. Así sabría desde el principio qué seguimiento puede esperar.</p></details></article>
+<article class="film"><div class="player"><video controls playsinline preload="metadata" poster="recursos/habilidades.webp" data-video="habilidades" aria-label="Cómo trabajo con los demás"><source src="videos/habilidades.mp4" type="video/mp4"><track kind="captions" srclang="es" label="Español" src="videos/habilidades.vtt"></track></source></video></div><p class="video-error" hidden>El vídeo no se ha podido cargar. <a href="videos/habilidades.mp4" download>Descargar MP4</a>.</p><div class="film-type"><span>Competencias personales</span><span>0:30</span></div><h3>Cómo trabajo con los demás</h3><details><summary>Guion por escenas</summary><p><button type="button" class="seek-scene" data-second="0.0" aria-label="Reproducir desde 0 segundos. Escuchar primero">0:00 · Escuchar primero</button> Cuando alguien me cuenta un problema, primero escucho. Después resumo lo que he entendido para comprobar que hablamos de lo mismo.</p><p><button type="button" class="seek-scene" data-second="7.5" aria-label="Reproducir desde 7.5 segundos. Explicar con claridad">0:07 · Explicar con claridad</button> Me gusta explicar ideas complejas con palabras sencillas. Si una explicación no funciona, busco un ejemplo y la planteo de otra manera.</p><p><button type="button" class="seek-scene" data-second="15.0" aria-label="Reproducir desde 15 segundos. Saber coordinarse">0:15 · Saber coordinarse</button> En equipo, aclaro qué hace falta, cómo nos repartimos las tareas y cuándo volvemos a hablar para compartir avances.</p><p><button type="button" class="seek-scene" data-second="22.5" aria-label="Reproducir desde 22.5 segundos. Revisar y adaptarme">0:22 · Revisar y adaptarme</button> Soy organizado y me fijo en los detalles. Si cambian las prioridades, reajusto el plan y aviso a quienes dependen de mi trabajo.</p></details></article></div></div></section>
+<section class="wrap profile-grid" id="trayectoria" aria-label="Trayectoria y formación"><div><div class="profile-head"><h2 class="section-title">Experiencia</h2></div><article class="cv-row"><span class="when">Febrero – junio de 2026</span><h3>Renta 4 Banco · Banca Privada</h3><p>Durante mis prácticas colaboré en el seguimiento de carteras de inversión y en la preparación de informes y propuestas para clientes de alto patrimonio. Apoyé la operativa diaria y la gestión de documentación MiFID en coordinación con Riesgos, Cumplimiento Normativo, Operaciones y Back Office.</p></article><article class="cv-row"><span class="when">Febrero de 2024 – mayo de 2025</span><h3>Observatorio de Salud</h3><p>Participé en consultoría estratégica para instituciones sanitarias públicas y privadas. Coordiné jornadas y congresos nacionales con ponentes, patrocinadores y equipos multidisciplinares.</p></article><article class="cv-row"><span class="when">2022 – 2025</span><h3>Auxiliar de congresos y eventos</h3><p>Coordiné la logística, atendí a asistentes y ponentes y resolví incidencias durante los eventos.</p></article><article class="cv-row"><span class="when">2023 – 2025</span><h3>Entrenador de fútbol base</h3><p>Planifiqué y dirigí entrenamientos, gestioné grupos y trabajé la motivación de jóvenes deportistas.</p></article></div><div><div class="profile-head"><h2 class="section-title">Formación</h2></div><article class="cv-row"><span class="when">2022 – 2026</span><h3>Administración y Dirección de Empresas</h3><p>Graduado por ESIC University.</p></article><article class="cv-row"><span class="when">2022 – 2027</span><h3>Data Science</h3><p>Último curso del grado en ESIC University.</p></article><article class="cv-row"><span class="when">2025 – 2026</span><h3>Erasmus en Roma</h3><p>Bachelor of Business Administration en Sapienza Università di Roma.</p></article><article class="cv-row"><h3>Herramientas y competencias</h3><p>Análisis financiero, seguimiento de carteras, operativa bancaria y documentación MiFID. Excel avanzado, PowerPoint, Word y Bloomberg Terminal.</p></article><p class="languages"><strong>Idiomas</strong> · Español nativo, inglés C1 (IELTS Academic) e italiano básico.</p></div></section><section id="asistente" class="assistant-zone" aria-labelledby="chat-title"><div class="wrap assistant-layout">
+<div class="assistant-intro"><p class="eyebrow">Asistente del CV</p><h2 class="section-title" id="chat-title">Hablemos de<br>mi perfil</h2><p>Conecta Gemini y pregunta sobre Álvaro o sobre cualquier otro tema. Sin clave puedes consultar las tres fichas del CV.</p>
+<div class="choices"><button type="button" class="choice" data-id="programacion" title="¿Qué experiencia tienes en programación e IA?">Programación e IA</button><button type="button" class="choice" data-id="tecnica" title="¿Cómo abordarías la captación de un cliente de banca privada?">Captación en banca privada</button><button type="button" class="choice" data-id="disponibilidad" title="¿Cuál es tu disponibilidad actual?">Disponibilidad</button></div></div>
+<div class="chat-box"><div class="chat-head"><div><strong>Asistente de Álvaro</strong><span class="mode" id="modo">Fichas del CV · sin clave</span></div><button class="key-toggle" id="mostrar-clave" type="button" aria-expanded="false" aria-controls="configuracion">Conectar Gemini</button></div>
+<div class="key-panel" id="configuracion" hidden><form id="form-clave"><label for="clave">Clave personal de Gemini</label><p>Se guardará en este navegador y se enviará solo a Google al consultar el chat. En un equipo compartido, bórrala al terminar. <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a></p><div class="key-field"><input id="clave" type="password" autocomplete="off" spellcheck="false" inputmode="text" maxlength="512"><button class="mini" type="submit">Guardar</button></div></form><button id="olvidar" type="button" class="forget" hidden>Borrar clave y conversación</button></div>
+<div id="historial" class="history" role="log" aria-label="Conversación sobre el CV" aria-live="polite" aria-relevant="additions" tabindex="0"><p class="empty">¿Qué te gustaría saber sobre mi formación o mi experiencia en banca privada?</p></div>
+<p id="estado" class="status" role="status" aria-live="polite"></p><form id="preguntar" class="composer"><label class="sr-only" for="mensaje">Tu pregunta para Gemini</label><input id="mensaje" maxlength="16000" placeholder="Conecta Gemini para escribir…" disabled autocomplete="off"><button id="enviar" class="send" type="submit" disabled>Enviar</button></form>
+<noscript><p class="noscript">Activa JavaScript para usar el asistente. La trayectoria y los vídeos se pueden consultar arriba.</p></noscript></div>
+</div></section>
+</main>
+<footer class="wrap foot" id="contacto"><span>Álvaro Carrasco Del Olmo · Madrid</span><div class="meta-links"><a href="mailto:acarrascodelolmo@gmail.com">acarrascodelolmo@gmail.com</a><a id="enlace-ficha" href="perfil_cv.json" download="perfil_cv.json">Ficha del CV</a></div></footer>
+<script type="application/json" id="perfil">{
+  "identidad": {
+    "nombre": "Álvaro Carrasco Del Olmo",
+    "ciudad": "Madrid",
+    "contacto": "acarrascodelolmo@gmail.com",
+    "perfil": "Soy graduado en ADE por ESIC y curso el último año de Data Science. Durante mis prácticas en Renta 4 Banco combiné el análisis de carteras con la atención a clientes de banca privada."
+  },
+  "experiencia": [
+    {
+      "periodo": "Febrero – junio de 2026",
+      "puesto": "Renta 4 Banco · Banca Privada",
+      "funciones": "Durante mis prácticas colaboré en el seguimiento de carteras de inversión y en la preparación de informes y propuestas para clientes de alto patrimonio. Apoyé la operativa diaria y la gestión de documentación MiFID en coordinación con Riesgos, Cumplimiento Normativo, Operaciones y Back Office."
+    },
+    {
+      "periodo": "Febrero de 2024 – mayo de 2025",
+      "puesto": "Observatorio de Salud",
+      "funciones": "Participé en consultoría estratégica para instituciones sanitarias públicas y privadas. Coordiné jornadas y congresos nacionales con ponentes, patrocinadores y equipos multidisciplinares."
+    },
+    {
+      "periodo": "2022 – 2025",
+      "puesto": "Auxiliar de congresos y eventos",
+      "funciones": "Coordiné la logística, atendí a asistentes y ponentes y resolví incidencias durante los eventos."
+    },
+    {
+      "periodo": "2023 – 2025",
+      "puesto": "Entrenador de fútbol base",
+      "funciones": "Planifiqué y dirigí entrenamientos, gestioné grupos y trabajé la motivación de jóvenes deportistas."
+    }
+  ],
+  "formacion": [
+    {
+      "periodo": "2022 – 2026",
+      "estudios": "Administración y Dirección de Empresas",
+      "detalle": "Graduado por ESIC University."
+    },
+    {
+      "periodo": "2022 – 2027",
+      "estudios": "Data Science",
+      "detalle": "Último curso del grado en ESIC University."
+    },
+    {
+      "periodo": "2025 – 2026",
+      "estudios": "Erasmus en Roma",
+      "detalle": "Bachelor of Business Administration en Sapienza Università di Roma."
+    }
+  ],
+  "competencias": "Análisis financiero, seguimiento de carteras, operativa bancaria y documentación MiFID. Excel avanzado, PowerPoint, Word y Bloomberg Terminal.",
+  "idiomas": "Español nativo, inglés C1 (IELTS Academic) e italiano básico.",
+  "objetivo": "Desarrollar una carrera de largo recorrido en banca.",
+  "consultas_guiadas": [
+    {
+      "id": "programacion",
+      "pregunta": "¿Qué experiencia tienes en programación e IA?",
+      "respuesta": "Curso el último año de Data Science y tengo formación en análisis de datos. Mi CV recoge Excel avanzado y Bloomberg Terminal. No detalla lenguajes de programación ni proyectos específicos de IA."
+    },
+    {
+      "id": "tecnica",
+      "pregunta": "¿Cómo abordarías la captación de un cliente de banca privada?",
+      "respuesta": "Caso ilustrativo. Una persona tiene su patrimonio repartido entre varias entidades. Se explican el diagnóstico inicial, la revisión de posiciones, la propuesta y el acompañamiento en el alta y el seguimiento."
+    },
+    {
+      "id": "disponibilidad",
+      "pregunta": "¿Cuál es tu disponibilidad actual?",
+      "respuesta": "Estoy cursando el último año de Data Science. Mi CV no especifica una jornada ni una fecha de incorporación. Puedes escribirme para concretarlo."
+    }
+  ],
+  "ejemplo_comercial": "Caso ilustrativo. Una persona tiene su patrimonio repartido entre varias entidades. Se explican el diagnóstico inicial, la revisión de posiciones, la propuesta y el acompañamiento en el alta y el seguimiento."
+}</script>
+<script type="application/json" id="subtitulos">{
+  "pitch": [
+    [
+      0.0,
+      7.5,
+      "Hola, soy Álvaro Carrasco Del Olmo. Soy graduado en Administración y Dirección de Empresas por ESIC."
+    ],
+    [
+      7.5,
+      15.0,
+      "Estoy terminando el grado en Ciencia de Datos. Me interesa cómo el análisis financiero ayuda a preparar una conversación con un cliente."
+    ],
+    [
+      15.0,
+      22.5,
+      "Durante mis prácticas en Renta Cuatro colaboré en el seguimiento de carteras y preparé informes para reuniones con clientes."
+    ],
+    [
+      22.5,
+      30.0,
+      "Quiero seguir creciendo en banca privada. Disfruto tanto estudiando una cartera como escuchando a la persona que hay detrás."
+    ]
+  ],
+  "proyecto": [
+    [
+      0.0,
+      7.5,
+      "Pongamos un ejemplo. Una persona tiene su patrimonio repartido entre varias entidades y quiere entender qué tiene en conjunto."
+    ],
+    [
+      7.5,
+      15.0,
+      "En la primera reunión le preguntaría para qué quiere el dinero, cuándo podría necesitarlo y qué caídas le preocuparían."
+    ],
+    [
+      15.0,
+      22.5,
+      "Con su permiso, revisaría sus posiciones y prepararía una propuesta. Le explicaría las coincidencias entre fondos, los riesgos y los costes."
+    ],
+    [
+      22.5,
+      30.0,
+      "Si decide hacerse cliente, le acompañaría en el alta y fijaríamos la primera revisión. Así sabría desde el principio qué seguimiento puede esperar."
+    ]
+  ],
+  "habilidades": [
+    [
+      0.0,
+      7.5,
+      "Cuando alguien me cuenta un problema, primero escucho. Después resumo lo que he entendido para comprobar que hablamos de lo mismo."
+    ],
+    [
+      7.5,
+      15.0,
+      "Me gusta explicar ideas complejas con palabras sencillas. Si una explicación no funciona, busco un ejemplo y la planteo de otra manera."
+    ],
+    [
+      15.0,
+      22.5,
+      "En equipo, aclaro qué hace falta, cómo nos repartimos las tareas y cuándo volvemos a hablar para compartir avances."
+    ],
+    [
+      22.5,
+      30.0,
+      "Soy organizado y me fijo en los detalles. Si cambian las prioridades, reajusto el plan y aviso a quienes dependen de mi trabajo."
+    ]
+  ]
+}</script>
+<script>'use strict';
+(() => {
+  const byId = id => document.getElementById(id);
+  const profile = JSON.parse(byId('perfil').textContent);
+  const captions = JSON.parse(byId('subtitulos').textContent);
+  const guided = new Map(profile.consultas_guiadas.map(item => [item.id, item]));
+  const profileLoaded = Promise.resolve();
+  const form = byId('preguntar');
+  const input = byId('mensaje');
+  const log = byId('historial');
+  const status = byId('estado');
+  const panel = byId('configuracion');
+  const toggle = byId('mostrar-clave');
+  const keyBox = byId('clave');
+  const preferredModel = 'gemini-2.5-flash';
+  const apiRoot = 'https://generativelanguage.googleapis.com/v1beta';
+  const storageKey = 'cv.alvaro-carrasco.gemini';
+  const choices = Array.from(document.querySelectorAll('.choice'));
+  let apiKey = '';
+  let model = preferredModel;
+  let discoverModel = true;
+  let active = null;
+  let turns = [];
+  let verified = false;
+  try { apiKey = localStorage.getItem(storageKey) || ''; } catch { /* The chat also works for this tab. */ }
+
+  function buildInstruction() {
+    return 'Eres Gemini, un asistente de propósito general. Contesta preguntas sobre cualquier tema. Cuando pregunten por Álvaro, utiliza la ficha como fuente de sus datos personales y profesionales. Si falta un dato sobre él, dilo. Para contratarle o proponer una entrevista, facilita el correo de contacto de la ficha. Para preguntas generales usa tus conocimientos y responde directamente. Distingue las prácticas de un puesto actual y el ejemplo ilustrativo de captación de una operación real. Responde con claridad en el idioma de la pregunta. Ficha del CV: ' + JSON.stringify(profile);
+  }
+  function say(text, working = false) {
+    status.textContent = text;
+    status.classList.toggle('working', working);
+  }
+  function controls() {
+    byId('modo').textContent = !apiKey ? 'Fichas del CV · sin clave' : (verified ? 'Gemini · ' + model : 'Gemini · clave guardada, pendiente de prueba');
+    toggle.textContent = apiKey ? 'Gestionar clave' : 'Conectar Gemini';
+    byId('olvidar').hidden = !apiKey;
+    input.placeholder = 'Pregunta a Gemini…';
+    input.disabled = Boolean(active);
+    byId('enviar').disabled = input.disabled;
+    for (const button of choices) button.disabled = Boolean(active);
+    log.setAttribute('aria-busy', String(Boolean(active)));
+  }
+  function configure(isOpen) {
+    panel.hidden = !isOpen;
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    if (isOpen) keyBox.focus();
+  }
+  function addMessage(label, text, kind = '') {
+    log.querySelector('.empty')?.remove();
+    const message = document.createElement('div');
+    message.className = 'bubble ' + kind;
+    const byline = document.createElement('strong');
+    byline.textContent = label;
+    const body = document.createElement('span');
+    body.textContent = text;
+    message.append(byline, body);
+    log.append(message);
+    while (log.children.length > 20) log.firstElementChild.remove();
+    log.scrollTop = log.scrollHeight;
+  }
+  function reset() {
+    if (active) active.abort();
+    active = null;
+    turns = [];
+    model = preferredModel;
+    discoverModel = true;
+    verified = false;
+    input.value = '';
+    log.replaceChildren();
+  }
+  toggle.addEventListener('click', () => configure(panel.hidden));
+  byId('form-clave').addEventListener('submit', event => {
+    event.preventDefault();
+    const value = keyBox.value.trim();
+    if (!value) { say('Introduce tu clave de Gemini.'); keyBox.focus(); return; }
+    const pending = input.value;
+    reset();
+    input.value = pending;
+    apiKey = value;
+    keyBox.value = '';
+    let notice = 'Clave guardada. Envía una pregunta para probar la conexión.';
+    try { localStorage.setItem(storageKey, apiKey); }
+    catch { notice = 'Clave disponible solo durante esta sesión. Envía una pregunta.'; }
+    configure(false); controls(); say(notice); input.focus();
+    probeConnection();
+  });
+  byId('olvidar').addEventListener('click', () => {
+    reset(); apiKey = ''; keyBox.value = '';
+    let notice = 'Clave y conversación borradas.';
+    try { localStorage.removeItem(storageKey); }
+    catch { notice = 'Clave retirada de esta pestaña. Puedes borrar los datos del sitio en tu navegador.'; }
+    configure(false); controls(); say(notice); toggle.focus();
+  });
+  class GoogleError extends Error {
+    constructor(statusCode, reason = '') { super(reason); this.statusCode = statusCode; this.reason = reason; }
+  }
+  async function google(path, options, signal) {
+    const response = await fetch(apiRoot + path, {
+      ...options, signal, cache: 'no-store', credentials: 'omit', referrerPolicy: 'no-referrer',
+      headers: { 'x-goog-api-key': apiKey, ...(options.body ? { 'Content-Type': 'application/json' } : {}) }
+    });
+    const body = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      const reason = body.error?.details?.find(detail => typeof detail.reason === 'string')?.reason;
+      throw new GoogleError(response.status, reason || body.error?.status || '');
+    }
+    return body;
+  }
+  function friendly(error, signal) {
+    const code = error.statusCode;
+    if (signal.aborted) return 'La consulta ha tardado demasiado. Comprueba la conexión y vuelve a enviarla.';
+    if (code === 401 || code === 403 || /API_KEY|CREDENTIAL|UNAUTHENTICATED|PERMISSION_DENIED/.test(error.reason || '')) return 'Google ha rechazado la clave o sus permisos. Revisa la clave y las restricciones de tu proyecto en Google AI Studio.';
+    if (code === 429) return 'Has alcanzado el límite de peticiones o de cuota de Google. Consulta la cuota de tu proyecto y prueba más tarde.';
+    if (code === 404 || error.message === 'no-flash') return 'Tu proyecto no tiene disponible un modelo Gemini Flash compatible. Revisa el acceso desde Google AI Studio.';
+    if (code === 400) return 'Google no ha aceptado la solicitud. Revisa la clave y prueba con una pregunta breve sobre el CV.';
+    if (code >= 500) return 'Gemini ha devuelto un error temporal (HTTP ' + code + '). Google aún no ha podido generar la respuesta. Vuelve a enviar la pregunta en unos minutos.';
+    if (error.message === 'sin-texto') return 'Gemini no ha devuelto una respuesta de texto. Prueba a reformular tu pregunta sobre el CV.';
+    return 'No se ha podido conectar con Google. Comprueba tu conexión y vuelve a intentarlo.';
+  }
+  function apiHistory(question) {
+    const messages = [];
+    for (const turn of turns.slice(-4)) {
+      messages.push({ role: 'user', parts: [{ text: turn.question }] }, { role: 'model', parts: [{ text: turn.answer }] });
+    }
+    messages.push({ role: 'user', parts: [{ text: question }] });
+    return messages;
+  }
+  async function generate(name, body, signal) {
+    const data = await google('/models/' + name + ':generateContent', { method: 'POST', body }, signal);
+    const content = data.candidates?.[0]?.content?.parts || [];
+    const text = content.filter(part => !part.thought && typeof part.text === 'string').map(part => part.text).join('\n').trim();
+    if (!text) throw new Error('sin-texto');
+    return text;
+  }
+  function canSwitch(error) {
+    return [404, 500, 502, 503, 504].includes(error.statusCode);
+  }
+  async function alternatives(current, signal) {
+    const catalog = await google('/models?pageSize=1000', { method: 'GET' }, signal);
+    const names = (catalog.models || [])
+      .filter(item => item.supportedGenerationMethods?.includes('generateContent'))
+      .map(item => item.name.replace(/^models\//, ''))
+      .filter(name => name !== current && /^gemini-[\w.-]+$/.test(name)
+        && /flash|pro/.test(name) && !/image|audio|tts|live|robot|computer-use|research|embedding|vision/.test(name));
+    const rank = name => Number(/preview|experimental|exp-/.test(name)) * 4 + Number(!name.includes('flash')) * 2;
+    return names.sort((a,b) => rank(a) - rank(b) || b.localeCompare(a, 'en', {numeric:true})).slice(0, 2);
+  }
+  async function resolveAnswer(body, signal) {
+    if (discoverModel) {
+      try {
+        const catalog = await alternatives('', signal);
+        if (catalog.length) model = catalog[0];
+        discoverModel = false;
+      } catch (error) {
+        if (!canSwitch(error)) throw error;
+      }
+    }
+    try {
+      return {used:model, answer:await generate(model, body, signal)};
+    } catch (first) {
+      if (!canSwitch(first)) throw first;
+      say('El modelo está temporalmente fuera de servicio. Buscando otro modelo Gemini…', true);
+      let options;
+      try { options = await alternatives(model, signal); }
+      catch (error) {
+        if (!canSwitch(error)) throw error;
+        options = [];
+      }
+      if (!options.length && first.statusCode !== 404) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        options = [model];
+      }
+      let last = first;
+      for (const name of options) {
+        if (signal.aborted) throw last;
+        try { return {used:name, answer:await generate(name, body, signal)}; }
+        catch (error) { if (!canSwitch(error)) throw error; last = error; }
+      }
+      throw last;
+    }
+  }
+  async function probeConnection() {
+    const control = new AbortController();
+    active = control;
+    controls();
+    say('Probando tu conexión con una consulta breve a Gemini…', true);
+    const timer = setTimeout(() => control.abort(), 35000);
+    try {
+      const body = JSON.stringify({contents:[{role:'user',parts:[{text:'Responde brevemente: ¿cuánto es dos más dos?'}]}]});
+      const result = await resolveAnswer(body, control.signal);
+      if (active !== control) return;
+      model = result.used;
+      verified = true;
+      say('Gemini ha respondido. Ya puedes escribir tu pregunta.');
+    } catch (error) {
+      if (active === control) say(friendly(error, control.signal));
+    } finally {
+      clearTimeout(timer);
+      if (active === control) { active = null; controls(); input.focus(); }
+    }
+  }
+  async function ask(question) {
+    if (active || !question) return;
+    if (!apiKey) {
+      input.value = question;
+      configure(true);
+      say('Introduce tu clave en este navegador para enviar la pregunta a Gemini.');
+      return;
+    }
+    const control = new AbortController();
+    active = control; controls(); addMessage('Tú', question, 'user'); say('Consultando a Gemini…', true);
+    const timeout = window.setTimeout(() => control.abort(), 65000);
+    await profileLoaded;
+    if (active !== control) { clearTimeout(timeout); return; }
+    const body = JSON.stringify({ systemInstruction: { parts: [{ text: buildInstruction(question) }] }, contents: apiHistory(question), generationConfig: { temperature: 0.2, maxOutputTokens: 1800 } });
+    try {
+      const {used, answer} = await resolveAnswer(body, control.signal);
+      if (active !== control) return;
+      model = used; verified = true;
+      addMessage('Gemini · ' + model, answer);
+      turns = [...turns, { question, answer }].slice(-4);
+      input.value = ''; say('');
+    } catch (error) {
+      if (active !== control) return;
+      addMessage('Conexión con Gemini', friendly(error, control.signal), 'error');
+      say('Tu pregunta está lista para reenviar.');
+      input.value = question;
+    } finally {
+      clearTimeout(timeout);
+      if (active === control) { active = null; controls(); input.focus({preventScroll: true}); }
+    }
+  }
+  form.addEventListener('submit', event => { event.preventDefault(); ask(input.value.trim().slice(0, 16000)); });
+  for (const button of choices) button.addEventListener('click', () => {
+    const card = guided.get(button.dataset.id);
+    if (!card) return;
+    if (active) return;
+    if (apiKey) ask(card.pregunta);
+    else showCard(card);
+  });
+  function showCard(card) {
+    addMessage('Tú', card.pregunta, 'user');
+    addMessage('Ficha del CV', card.respuesta);
+    turns = [...turns, { question: card.pregunta, answer: card.respuesta }].slice(-4);
+    say('');
+  }
+  // On file URLs WebVTT fetches can be restricted. Use the identical packaged cues.
+  for (const player of document.querySelectorAll('video')) {
+    if (location.protocol === 'file:' || document.body.dataset.portable === 'true') {
+      player.querySelector('track')?.remove();
+      if (window.VTTCue) {
+        const track = player.addTextTrack('captions', 'Español', 'es');
+        for (const [start, end, line] of captions[player.dataset.video]) track.addCue(new VTTCue(start, end, line));
+        track.mode = 'hidden';
+      }
+    }
+    if (document.body.dataset.portable === 'true') {
+      const download = player.closest('.film').querySelector('.video-error a');
+      download.href = player.querySelector('source').src;
+    }
+    player.addEventListener('play', () => {
+      for (const other of document.querySelectorAll('video')) if (other !== player) other.pause();
+    });
+    const showMediaError = () => { player.closest('.film').querySelector('.video-error').hidden = false; };
+    player.addEventListener('error', showMediaError);
+    player.querySelector('source')?.addEventListener('error', showMediaError);
+  }
+  for (const button of document.querySelectorAll('.seek-scene')) {
+    button.addEventListener('click', () => {
+      const video = button.closest('.film').querySelector('video');
+      video.currentTime = Number(button.dataset.second);
+      video.play().catch(() => video.focus());
+    });
+  }
+  controls();
+})();</script>
+</body></html>

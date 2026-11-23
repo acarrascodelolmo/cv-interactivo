@@ -1,0 +1,68 @@
+{
+  "identidad": {
+    "nombre": "Álvaro Carrasco Del Olmo",
+    "ciudad": "Madrid",
+    "contacto": "acarrascodelolmo@gmail.com",
+    "perfil": "Soy graduado en ADE por ESIC y curso el último año de Data Science. Durante mis prácticas en Renta 4 Banco combiné el análisis de carteras con la atención a clientes de banca privada."
+  },
+  "experiencia": [
+    {
+      "periodo": "Febrero – junio de 2026",
+      "puesto": "Renta 4 Banco · Banca Privada",
+      "funciones": "Durante mis prácticas colaboré en el seguimiento de carteras de inversión y en la preparación de informes y propuestas para clientes de alto patrimonio. Apoyé la operativa diaria y la gestión de documentación MiFID en coordinación con Riesgos, Cumplimiento Normativo, Operaciones y Back Office."
+    },
+    {
+      "periodo": "Febrero de 2024 – mayo de 2025",
+      "puesto": "Observatorio de Salud",
+      "funciones": "Participé en consultoría estratégica para instituciones sanitarias públicas y privadas. Coordiné jornadas y congresos nacionales con ponentes, patrocinadores y equipos multidisciplinares."
+    },
+    {
+      "periodo": "2022 – 2025",
+      "puesto": "Auxiliar de congresos y eventos",
+      "funciones": "Coordiné la logística, atendí a asistentes y ponentes y resolví incidencias durante los eventos."
+    },
+    {
+      "periodo": "2023 – 2025",
+      "puesto": "Entrenador de fútbol base",
+      "funciones": "Planifiqué y dirigí entrenamientos, gestioné grupos y trabajé la motivación de jóvenes deportistas."
+    }
+  ],
+  "formacion": [
+    {
+      "periodo": "2022 – 2026",
+      "estudios": "Administración y Dirección de Empresas",
+      "detalle": "Graduado por ESIC University."
+    },
+    {
+      "periodo": "2022 – 2027",
+      "estudios": "Data Science",
+      "detalle": "Último curso del grado en ESIC University."
+    },
+    {
+      "periodo": "2025 – 2026",
+      "estudios": "Erasmus en Roma",
+      "detalle": "Bachelor of Business Administration en Sapienza Università di Roma."
+    }
+  ],
+  "competencias": "Análisis financiero, seguimiento de carteras, operativa bancaria y documentación MiFID. Excel avanzado, PowerPoint, Word y Bloomberg Terminal.",
+  "idiomas": "Español nativo, inglés C1 (IELTS Academic) e italiano básico.",
+  "objetivo": "Desarrollar una carrera de largo recorrido en banca.",
+  "consultas_guiadas": [
+    {
+      "id": "programacion",
+      "pregunta": "¿Qué experiencia tienes en programación e IA?",
+      "respuesta": "Curso el último año de Data Science y tengo formación en análisis de datos. Mi CV recoge Excel avanzado y Bloomberg Terminal. No detalla lenguajes de programación ni proyectos específicos de IA."
+    },
+    {
+      "id": "tecnica",
+      "pregunta": "¿Cómo abordarías la captación de un cliente de banca privada?",
+      "respuesta": "Caso ilustrativo. Una persona tiene su patrimonio repartido entre varias entidades. Se explican el diagnóstico inicial, la revisión de posiciones, la propuesta y el acompañamiento en el alta y el seguimiento."
+    },
+    {
+      "id": "disponibilidad",
+      "pregunta": "¿Cuál es tu disponibilidad actual?",
+      "respuesta": "Estoy cursando el último año de Data Science. Mi CV no especifica una jornada ni una fecha de incorporación. Puedes escribirme para concretarlo."
+    }
+  ],
+  "ejemplo_comercial": "Caso ilustrativo. Una persona tiene su patrimonio repartido entre varias entidades. Se explican el diagnóstico inicial, la revisión de posiciones, la propuesta y el acompañamiento en el alta y el seguimiento."
+}
