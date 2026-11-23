@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#193739">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Álvaro Carrasco Del Olmo · Formación, trayectoria en banca privada y competencias.">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; form-action 'none'; img-src 'self' data: file:; font-src 'self' data: file:; media-src 'self' data: blob: file:; connect-src 'self' https://generativelanguage.googleapis.com; style-src 'unsafe-inline'; script-src 'sha256-CpIc4rKZ7w80bC0dS9TU3qPYySuVDA54NZ0t6yGEiVc='">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; form-action 'none'; img-src 'self' data: file:; font-src 'self' data: file:; media-src 'self' data: blob: file:; connect-src 'self' https://generativelanguage.googleapis.com; style-src 'unsafe-inline'; script-src 'sha256-boiGfWKp9Nm5PKacv993AeaRYpaE8S4JqDfyTjgmVRU='">
 <link rel="icon" href="data:,">
 <title>Álvaro Carrasco del Olmo · Banca privada y ciencia de datos</title>
 <style>@font-face{font-family:'DM Sans';src:url('recursos/dm-sans.woff2') format('woff2');font-weight:100 1000;font-display:swap}
@@ -41,13 +41,13 @@
 <div class="assistant-intro"><p class="eyebrow">Asistente del CV</p><h2 class="section-title" id="chat-title">Hablemos de<br>mi perfil</h2><p>Conecta Gemini y pregunta sobre Álvaro o sobre cualquier otro tema. Sin clave puedes consultar las tres fichas del CV.</p>
 <div class="choices"><button type="button" class="choice" data-id="programacion" title="¿Qué experiencia tienes en programación e IA?">Programación e IA</button><button type="button" class="choice" data-id="tecnica" title="¿Cómo abordarías la captación de un cliente de banca privada?">Captación en banca privada</button><button type="button" class="choice" data-id="disponibilidad" title="¿Cuál es tu disponibilidad actual?">Disponibilidad</button></div></div>
 <div class="chat-box"><div class="chat-head"><div><strong>Asistente de Álvaro</strong><span class="mode" id="modo">Fichas del CV · sin clave</span></div><button class="key-toggle" id="mostrar-clave" type="button" aria-expanded="false" aria-controls="configuracion">Conectar Gemini</button></div>
-<div class="key-panel" id="configuracion" hidden><form id="form-clave"><label for="clave">Clave personal de Gemini</label><p>Se guardará en este navegador y se enviará solo a Google al consultar el chat. En un equipo compartido, bórrala al terminar. <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a></p><div class="key-field"><input id="clave" type="password" autocomplete="off" spellcheck="false" inputmode="text" maxlength="512"><button class="mini" type="submit">Guardar</button></div></form><button id="olvidar" type="button" class="forget" hidden>Borrar clave y conversación</button></div>
+<div class="key-panel" id="configuracion" hidden><form id="form-clave"><label for="clave">Clave personal de Gemini</label><p>Se guardará en este navegador y se enviará solo a Google al consultar el chat. En un equipo compartido, bórrala al terminar. <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a> · <a href="https://aistudio.google.com/rate-limit" target="_blank" rel="noopener noreferrer">Consultar cuota</a></p><div class="key-field"><input id="clave" type="password" autocomplete="off" spellcheck="false" inputmode="text" maxlength="512"><button class="mini" type="submit">Guardar</button></div></form><button id="olvidar" type="button" class="forget" hidden>Borrar clave y conversación</button></div>
 <div id="historial" class="history" role="log" aria-label="Conversación sobre el CV" aria-live="polite" aria-relevant="additions" tabindex="0"><p class="empty">¿Qué te gustaría saber sobre mi formación o mi experiencia en banca privada?</p></div>
 <p id="estado" class="status" role="status" aria-live="polite"></p><form id="preguntar" class="composer"><label class="sr-only" for="mensaje">Tu pregunta para Gemini</label><input id="mensaje" maxlength="16000" placeholder="Conecta Gemini para escribir…" disabled autocomplete="off"><button id="enviar" class="send" type="submit" disabled>Enviar</button></form>
 <noscript><p class="noscript">Activa JavaScript para usar el asistente. La trayectoria y los vídeos se pueden consultar arriba.</p></noscript></div>
 </div></section>
 </main>
-<footer class="wrap foot" id="contacto"><span>Álvaro Carrasco Del Olmo · Madrid</span><div class="meta-links"><a href="mailto:acarrascodelolmo@gmail.com">acarrascodelolmo@gmail.com</a><a id="enlace-ficha" href="perfil_cv.json" download="perfil_cv.json">Ficha del CV</a></div></footer>
+<footer class="wrap foot" id="contacto"><span>Álvaro Carrasco Del Olmo · Madrid</span><div class="meta-links"><a href="mailto:acarrascodelolmo@gmail.com">acarrascodelolmo@gmail.com</a><a id="enlace-ficha" href="perfil_cv.json" download="perfil_cv.json">Ficha del CV</a><small>Versión 23.11.2026-r2</small></div></footer>
 <script type="application/json" id="perfil">{
   "identidad": {
     "nombre": "Álvaro Carrasco Del Olmo",
@@ -273,7 +273,6 @@
     try { localStorage.setItem(storageKey, apiKey); }
     catch { notice = 'Clave disponible solo durante esta sesión. Envía una pregunta.'; }
     configure(false); controls(); say(notice); input.focus();
-    probeConnection();
   });
   byId('olvidar').addEventListener('click', () => {
     reset(); apiKey = ''; keyBox.value = '';
@@ -345,26 +344,6 @@
       }
     }
     throw new Error(failures.join('\n'));
-  }
-  async function probeConnection() {
-    const control = new AbortController();
-    active = control;
-    controls();
-    say('Probando tu conexión con una consulta breve a Gemini…', true);
-
-    try {
-      const body = {contents:[{role:'user',parts:[{text:'Responde brevemente: ¿cuánto es dos más dos?'}]}]};
-      const result = await resolveAnswer(body, control.signal);
-      if (active !== control) return;
-      model = result.used;
-      verified = true;
-      say('Gemini ha respondido. Ya puedes escribir tu pregunta.');
-    } catch (error) {
-      if (active === control) { addMessage('Conexión con Gemini', error.message, 'error'); say('La prueba de conexión ha fallado.'); }
-    } finally {
-
-      if (active === control) { active = null; controls(); input.focus(); }
-    }
   }
   async function ask(question) {
     if (active || !question) return;
