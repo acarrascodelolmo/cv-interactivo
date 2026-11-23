@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#193739">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Álvaro Carrasco Del Olmo · Formación, trayectoria en banca privada y competencias.">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; form-action 'none'; img-src 'self' data: file:; font-src 'self' data: file:; media-src 'self' data: blob: file:; connect-src 'self' https://generativelanguage.googleapis.com; style-src 'unsafe-inline'; script-src 'sha256-dWDedCEdCvXQSN2J14DmVRc8ixz+LINXlRy2LgfGg+c='">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; form-action 'none'; img-src 'self' data: file:; font-src 'self' data: file:; media-src 'self' data: blob: file:; connect-src 'self' https://generativelanguage.googleapis.com; style-src 'unsafe-inline'; script-src 'sha256-CpIc4rKZ7w80bC0dS9TU3qPYySuVDA54NZ0t6yGEiVc='">
 <link rel="icon" href="data:,">
 <title>Álvaro Carrasco del Olmo · Banca privada y ciencia de datos</title>
 <style>@font-face{font-family:'DM Sans';src:url('recursos/dm-sans.woff2') format('woff2');font-weight:100 1000;font-display:swap}
@@ -17,7 +17,7 @@
 @media(max-width:800px){.wrap{width:calc(100% - 48px)}.hero{grid-template-columns:1.23fr .77fr;gap:22px}.hero h1{font-size:clamp(4.15rem,9vw,6rem)}.hero-art{width:min(100%,273px)}.hero-art figcaption{font-size:.73rem}.section-head{align-items:start;flex-direction:column;gap:9px}.section-head p{max-width:none}.profile-grid{gap:31px}.assistant-layout{grid-template-columns:.75fr 1.25fr;gap:22px}.nav-links{gap:18px}.film h3{font-size:1.68rem}}
 @media(max-width:650px){.wrap{width:calc(100% - 36px)}.nav{padding:13px 0;gap:10px}.brand{font-size:.88rem}.nav-links{gap:15px}.nav-links a{font-size:.86rem}.nav-links .contact-nav{display:none}.monogram{width:33px;height:33px;font-size:1.28rem}.hero{display:flex;flex-direction:column;align-items:start;padding:32px 0 34px;gap:30px}.hero h1{font-size:clamp(4.35rem,13vw,6rem);margin:19px 0 17px}.hero-lead{max-width:51ch}.actions{margin-top:20px}.hero-art{margin:0;align-self:center;width:min(74%,292px)}.portrait-frame{padding:8px;box-shadow:7px 7px 0 #d4ddcf}.portrait-frame img{aspect-ratio:1.12;object-position:50% 28%}.hero-art figcaption{margin-top:15px;font-size:.8rem}.films,.profile-grid,.assistant-layout{grid-template-columns:1fr}.films{gap:27px}.film h3{font-size:2rem}.section-head{margin-bottom:20px}.profile-grid{padding:39px 0;gap:28px}.profile-head{margin-bottom:18px}.assistant-intro>p{max-width:none}.choices{margin-top:17px}.assistant-layout{gap:19px}.chat-head,.key-panel,.history{padding-inline:13px}.composer{padding:10px}.status{margin-inline:13px}.foot{align-items:start;flex-direction:column;gap:9px}.nav-links a[href="#trayectoria"]{display:none}}
 @media(max-width:360px){.brand-label{display:none}.hero h1{font-size:4.28rem}.btn{padding:9px 15px}.key-field{flex-wrap:wrap}.key-field input{flex-basis:100%}}
-@media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}.working{animation:none}} .seek-scene{display:block;cursor:pointer;border:0;background:transparent;color:#245353;padding:0 0 .2em;text-align:left;font:inherit;font-weight:700;text-decoration:underline}.seek-scene:focus-visible{outline:2px solid currentColor}</style>
+@media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}.working{animation:none}} .seek-scene{display:block;cursor:pointer;border:0;background:transparent;color:#245353;padding:0 0 .2em;text-align:left;font:inherit;font-weight:700;text-decoration:underline}.seek-scene:focus-visible{outline:2px solid currentColor}.bubble.error span{white-space:pre-wrap;overflow-wrap:anywhere}</style>
 </head>
 <body data-portable="false">
 <a class="skip" href="#principal">Saltar al contenido</a>
@@ -198,13 +198,17 @@
   const panel = byId('configuracion');
   const toggle = byId('mostrar-clave');
   const keyBox = byId('clave');
-  const preferredModel = 'gemini-2.5-flash';
+  const models = [
+    {name:'gemini-3.5-flash-lite', thinkingLevel:'MINIMAL'},
+    {name:'gemini-3.8-flash', thinkingLevel:'LOW'},
+    {name:'gemini-3.5-flash', thinkingLevel:'MINIMAL'}
+  ];
   const apiRoot = 'https://generativelanguage.googleapis.com/v1beta';
   const storageKey = 'cv.alvaro-carrasco.gemini';
   const choices = Array.from(document.querySelectorAll('.choice'));
   let apiKey = '';
-  let model = preferredModel;
-  let discoverModel = true;
+  let model = models[0].name;
+
   let active = null;
   let turns = [];
   let verified = false;
@@ -249,8 +253,8 @@
     if (active) active.abort();
     active = null;
     turns = [];
-    model = preferredModel;
-    discoverModel = true;
+    model = models[0].name;
+
     verified = false;
     input.value = '';
     log.replaceChildren();
@@ -278,31 +282,26 @@
     catch { notice = 'Clave retirada de esta pestaña. Puedes borrar los datos del sitio en tu navegador.'; }
     configure(false); controls(); say(notice); toggle.focus();
   });
-  class GoogleError extends Error {
-    constructor(statusCode, reason = '') { super(reason); this.statusCode = statusCode; this.reason = reason; }
-  }
   async function google(path, options, signal) {
     const response = await fetch(apiRoot + path, {
-      ...options, signal, cache: 'no-store', credentials: 'omit', referrerPolicy: 'no-referrer',
-      headers: { 'x-goog-api-key': apiKey, ...(options.body ? { 'Content-Type': 'application/json' } : {}) }
+      ...options, signal, cache:'no-store', credentials:'omit', referrerPolicy:'no-referrer',
+      headers:{'x-goog-api-key':apiKey, 'Content-Type':'application/json'}
     });
-    const body = await response.json().catch(() => ({}));
-    if (!response.ok) {
-      const reason = body.error?.details?.find(detail => typeof detail.reason === 'string')?.reason;
-      throw new GoogleError(response.status, reason || body.error?.status || '');
+    const raw = await response.text();
+    let data;
+    try { data = JSON.parse(raw); } catch { data = {}; }
+    if (!response.ok || data.error) {
+      const detail = data.error || {};
+      const error = new Error(detail.message ?? (raw || response.statusText));
+      error.http = response.status;
+      error.apiCode = detail.code;
+      error.apiStatus = detail.status;
+      throw error;
     }
-    return body;
+    return data;
   }
-  function friendly(error, signal) {
-    const code = error.statusCode;
-    if (signal.aborted) return 'La consulta ha tardado demasiado. Comprueba la conexión y vuelve a enviarla.';
-    if (code === 401 || code === 403 || /API_KEY|CREDENTIAL|UNAUTHENTICATED|PERMISSION_DENIED/.test(error.reason || '')) return 'Google ha rechazado la clave o sus permisos. Revisa la clave y las restricciones de tu proyecto en Google AI Studio.';
-    if (code === 429) return 'Has alcanzado el límite de peticiones o de cuota de Google. Consulta la cuota de tu proyecto y prueba más tarde.';
-    if (code === 404 || error.message === 'no-flash') return 'Tu proyecto no tiene disponible un modelo Gemini Flash compatible. Revisa el acceso desde Google AI Studio.';
-    if (code === 400) return 'Google no ha aceptado la solicitud. Revisa la clave y prueba con una pregunta breve sobre el CV.';
-    if (code >= 500) return 'Gemini ha devuelto un error temporal (HTTP ' + code + '). Google aún no ha podido generar la respuesta. Vuelve a enviar la pregunta en unos minutos.';
-    if (error.message === 'sin-texto') return 'Gemini no ha devuelto una respuesta de texto. Prueba a reformular tu pregunta sobre el CV.';
-    return 'No se ha podido conectar con Google. Comprueba tu conexión y vuelve a intentarlo.';
+  function diagnostic(error) {
+    return [error.http && 'HTTP ' + error.http, error.apiCode && error.apiCode !== error.http && 'API ' + error.apiCode, error.apiStatus, error.message].filter(Boolean).join(' · ');
   }
   function apiHistory(question) {
     const messages = [];
@@ -316,73 +315,54 @@
     const data = await google('/models/' + name + ':generateContent', { method: 'POST', body }, signal);
     const content = data.candidates?.[0]?.content?.parts || [];
     const text = content.filter(part => !part.thought && typeof part.text === 'string').map(part => part.text).join('\n').trim();
-    if (!text) throw new Error('sin-texto');
-    return text;
+    if (!text) throw new Error(data.promptFeedback?.blockReasonMessage || data.promptFeedback?.blockReason || data.candidates?.[0]?.finishMessage || data.candidates?.[0]?.finishReason || 'La API devolvió una respuesta sin texto.');
+    return {used:data.modelVersion || name, answer:text};
   }
-  function canSwitch(error) {
-    return [404, 500, 502, 503, 504].includes(error.statusCode);
-  }
-  async function alternatives(current, signal) {
-    const catalog = await google('/models?pageSize=1000', { method: 'GET' }, signal);
-    const names = (catalog.models || [])
-      .filter(item => item.supportedGenerationMethods?.includes('generateContent'))
-      .map(item => item.name.replace(/^models\//, ''))
-      .filter(name => name !== current && /^gemini-[\w.-]+$/.test(name)
-        && /flash|pro/.test(name) && !/image|audio|tts|live|robot|computer-use|research|embedding|vision/.test(name));
-    const rank = name => Number(/preview|experimental|exp-/.test(name)) * 4 + Number(!name.includes('flash')) * 2;
-    return names.sort((a,b) => rank(a) - rank(b) || b.localeCompare(a, 'en', {numeric:true})).slice(0, 2);
-  }
-  async function resolveAnswer(body, signal) {
-    if (discoverModel) {
-      try {
-        const catalog = await alternatives('', signal);
-        if (catalog.length) model = catalog[0];
-        discoverModel = false;
-      } catch (error) {
-        if (!canSwitch(error)) throw error;
+  async function resolveAnswer(payload, signal) {
+    const failures = [];
+    for (const {name, thinkingLevel} of models) {
+      const body = JSON.stringify({...payload, generationConfig:{
+        ...payload.generationConfig, thinkingConfig:{thinkingLevel}
+      }});
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        signal.throwIfAborted();
+        const timeout = AbortSignal.timeout(20000);
+        const attemptSignal = AbortSignal.any([signal, timeout]);
+        say('Consultando ' + name + ' · intento ' + attempt, true);
+        try {
+          return await generate(name, body, attemptSignal);
+        } catch (error) {
+          signal.throwIfAborted();
+          const expired = timeout.aborted;
+          const detail = expired ? 'Tiempo de espera agotado (20 s).' : diagnostic(error);
+          if (expired || attempt === 3 || ![429, 503].includes(error.http)) {
+            failures.push(name + ' · ' + detail);
+            break;
+          }
+          say(name + ' · HTTP ' + error.http + ' · reintento en 2 segundos…', true);
+          await new Promise(resolve => setTimeout(resolve, 2000));
+        }
       }
     }
-    try {
-      return {used:model, answer:await generate(model, body, signal)};
-    } catch (first) {
-      if (!canSwitch(first)) throw first;
-      say('El modelo está temporalmente fuera de servicio. Buscando otro modelo Gemini…', true);
-      let options;
-      try { options = await alternatives(model, signal); }
-      catch (error) {
-        if (!canSwitch(error)) throw error;
-        options = [];
-      }
-      if (!options.length && first.statusCode !== 404) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        options = [model];
-      }
-      let last = first;
-      for (const name of options) {
-        if (signal.aborted) throw last;
-        try { return {used:name, answer:await generate(name, body, signal)}; }
-        catch (error) { if (!canSwitch(error)) throw error; last = error; }
-      }
-      throw last;
-    }
+    throw new Error(failures.join('\n'));
   }
   async function probeConnection() {
     const control = new AbortController();
     active = control;
     controls();
     say('Probando tu conexión con una consulta breve a Gemini…', true);
-    const timer = setTimeout(() => control.abort(), 35000);
+
     try {
-      const body = JSON.stringify({contents:[{role:'user',parts:[{text:'Responde brevemente: ¿cuánto es dos más dos?'}]}]});
+      const body = {contents:[{role:'user',parts:[{text:'Responde brevemente: ¿cuánto es dos más dos?'}]}]};
       const result = await resolveAnswer(body, control.signal);
       if (active !== control) return;
       model = result.used;
       verified = true;
       say('Gemini ha respondido. Ya puedes escribir tu pregunta.');
     } catch (error) {
-      if (active === control) say(friendly(error, control.signal));
+      if (active === control) { addMessage('Conexión con Gemini', error.message, 'error'); say('La prueba de conexión ha fallado.'); }
     } finally {
-      clearTimeout(timer);
+
       if (active === control) { active = null; controls(); input.focus(); }
     }
   }
@@ -396,10 +376,10 @@
     }
     const control = new AbortController();
     active = control; controls(); addMessage('Tú', question, 'user'); say('Consultando a Gemini…', true);
-    const timeout = window.setTimeout(() => control.abort(), 65000);
+
     await profileLoaded;
-    if (active !== control) { clearTimeout(timeout); return; }
-    const body = JSON.stringify({ systemInstruction: { parts: [{ text: buildInstruction(question) }] }, contents: apiHistory(question), generationConfig: { temperature: 0.2, maxOutputTokens: 1800 } });
+    if (active !== control) return;
+    const body = { systemInstruction: { parts: [{ text: buildInstruction(question) }] }, contents: apiHistory(question), generationConfig: { temperature: 0.2, maxOutputTokens: 1800 } };
     try {
       const {used, answer} = await resolveAnswer(body, control.signal);
       if (active !== control) return;
@@ -409,11 +389,11 @@
       input.value = ''; say('');
     } catch (error) {
       if (active !== control) return;
-      addMessage('Conexión con Gemini', friendly(error, control.signal), 'error');
+      addMessage('Conexión con Gemini', error.message, 'error');
       say('Tu pregunta está lista para reenviar.');
       input.value = question;
     } finally {
-      clearTimeout(timeout);
+
       if (active === control) { active = null; controls(); input.focus({preventScroll: true}); }
     }
   }
